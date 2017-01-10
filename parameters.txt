@@ -1,0 +1,91 @@
+worldWidth = 200
+worldHeight = 200
+
+numParticles = 20000
+cellWidth = 1
+cellLength = 1
+
+timeStep = 0.1
+finalTime = 100
+
+cellSpeed = 1.0
+
+initializationMethod = InitializeAtRandom
+cellMovementModel = CellFixedVelocity
+posRandomNoiseFactor = 0.0
+
+applyOrientationNoise = true
+orientationRandomNoiseFactor = 0.1
+  
+applyCellReversals = false
+asynchronousCellReversals = true
+meanCellReversalTime = 8.0
+  
+applySideContactSignaling = false
+refractoryPeriod = 3.0
+alignOriThreshold = 0.2618
+sideSignalProb = 0.1
+  
+neighborCellAlignmentFlag = true
+cellAlignmentModel = NematicAlignment
+neighborAlignmentFactor = 0.1
+neighborSearchRadius = 1.0
+drawSearchAABB = false
+  
+drawCellShapeFlag = false
+drawCellVectorFlag = true
+drawCellOutlineFlag = false
+drawCellNumFlag = false
+drawCellCenterFlag = false
+  
+slimeCreationFlag = false
+slimeProduceRate = 20  
+slimeDegradeRateConstant = 1.0
+slimeGridWidth = 1  
+  
+slimeAlignmentFlag = false
+slimeSearchRadius = 10
+slimeSearchNumBins = 5
+slimeAttractionTime = 1
+thresholdSlimeVolume = 0.1
+slimeAlignmentFactor = 0.05
+  
+drawSlimeShapeFlag = false
+drawSlimeDirectionFlag = false
+drawSlimeOutlineFlag = false
+drawSlimeGrid = false
+drawSlimeGridNum = true
+drawSlimeAABBFlag = false
+drawSlimeAlignmentDirFlag = false
+
+applyCellGrowth = false
+cellGrowthRate = 0.01
+  
+applyCellCellRepulsion = false
+repulsionFactor = 1.0
+drawRepulsionDir = false
+  
+initialOrientation = RandomOrientation
+initialCellOrientation = 0
+initialRandomOrientationCellFraction = 0.1
+  
+dataDir = runData
+imageDir = images
+
+saveImages = false
+snapShotInterval = 0.99
+writeCellInformation = false
+calculationTime = 0.99
+
+daughterCellDirectionModel = ParentCellDirection
+daughterCellUniformDir = 1.57
+daughterCellParentDirProb = 1.0
+
+# GLOBAL PARAMETERS
+GUI = true
+cameraPosX = 100
+cameraPosY = 100
+cameraScale = 4.999
+imageWidth = 1000
+imageHeight = 1000
+scaleImages = false
