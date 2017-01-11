@@ -10,49 +10,19 @@ import java.util.Random;
  * @author Rajesh Balagam
  */
 public class MyVec2 extends Vec2 {
-//  public float x;
-//  public float y;
-
   public MyVec2() {
-//    this.x = 0.0;
-//    this.y = 0.0;
-    super.x = 0;
-    super.y = 0;
+    super(0, 0);
   }
 
   public MyVec2(float x, float y) {
     super(x, y);
   }
 
-  //    public MyVec2(float length, float alpha, float beta) {
-//            this.x = length * Math.cos(alpha);
-//            this.y = length * Math.cos(beta);
-//    }
-//
-//    public MyVec2(float x, float y, float length, float angle) {
-//            this.x = x + length * Math.cos(angle);
-//            this.y = y + length * Math.sin(angle);
-//    }
   public MyVec2(Vec2 vectorOrigin, float length, float angle) {
     super.x = vectorOrigin.x + length * (float) FastMath.cos(angle);
     super.y = vectorOrigin.y + length * (float) FastMath.sin(angle);
   }
 
-//  public static MyVec2 add(Vec2 v1, Vec2 v2) {
-//    Vec2 v3 = new Vec2();
-//    v3.x = v1.x + v2.x;
-//    v3.y = v1.y + v2.y;
-//
-//    return (v3);
-//  }
-//
-//  public static Vec2 subtract(Vec2 v1, Vec2 v2) {
-//    Vec2 v3 = new Vec2();
-//    v3.x = v1.x - v2.x;
-//    v3.y = v1.y - v2.y;
-//
-//    return (v3);
-//  }
   public static void copy(Vec2 source, Vec2 target) {
     target.x = source.x;
     target.y = source.y;
@@ -75,7 +45,6 @@ public class MyVec2 extends Vec2 {
   public static Vec2 vectorDir(Vec2 v1, Vec2 v2) {
 
     Vec2 v3 = new Vec2();
-//    v3 = Vec2.subtract(v2, v1);
     v3 = v2.sub(v1);
 
     return (v3);
@@ -109,12 +78,11 @@ public class MyVec2 extends Vec2 {
   }
 
   public static Vec2 unitVector(float x1, float y1, float x2, float y2) {
-    Vec2 unit = new Vec2();
 
     Vec2 v1 = new Vec2(x1, y1);
     Vec2 v2 = new Vec2(x2, y2);
 
-    unit = MyVec2.unitVector(v2, v1); // v2 - final point, v1 - origin
+    Vec2 unit = MyVec2.unitVector(v2, v1); // v2 - final point, v1 - origin
 
     return (unit);
   }
@@ -127,9 +95,6 @@ public class MyVec2 extends Vec2 {
    */
   public static Vec2 unitVector(float angle) {
     Vec2 unitVector = new Vec2();
-
-//        unitVector.x = MathUtils.cos(angle);
-//        unitVector.y = MathUtils.sin(angle);
     unitVector.x = (float) FastMath.cos(angle);
     unitVector.y = (float) FastMath.sin(angle);
 
@@ -138,14 +103,6 @@ public class MyVec2 extends Vec2 {
     return unitVector;
   }
 
-//      public static Vec2 multiply(Vec2 v1, float c) {
-//        Vec2 v2 = new Vec2();
-//
-//        v2.x = v1.x * c;
-//        v2.y = v1.y * c;
-//
-//        return (v2);
-//      }
   public static Vec2 divide(Vec2 v1, float c) {
     Vec2 v2 = new Vec2();
 
@@ -156,12 +113,8 @@ public class MyVec2 extends Vec2 {
   }
 
   public static Vec2 negative(Vec2 v1) {
-    Vec2 v2 = new Vec2();
-
-//    v2 = Vec2.multiply(v1, -1.0);
-    v2 = v1.mul(-1.0f);
-
-    return (v2);
+    Vec2 v2 = v1.mul(-1.0f);
+    return v2;
   }
 
   /**
@@ -200,12 +153,6 @@ public class MyVec2 extends Vec2 {
     return EuclidDistance;
   }
 
-//    public float length() {
-//        float length = 0.0;
-//        length = Math.sqrt(Math.pow(this.x, 2.0) + Math.pow(this.y, 2.0));
-//        return(length);
-//    }
-
   /**
    * Returns acute angle between two vectors based on dot product
    *
@@ -216,9 +163,9 @@ public class MyVec2 extends Vec2 {
   public static float getAngle(Vec2 dir1, Vec2 dir2) {
     float angle, dotValue;
 
-//        angle = (float)Math.acos(MyVec2.dotProduct(dir1, dir2)/(dir1.length()*dir2.length()));
+//    angle = (float)Math.acos(MyVec2.dotProduct(dir1, dir2)/(dir1.length()*dir2.length()));
     dotValue = MyVec2.dotProduct(dir1, dir2) / (dir1.length() * dir2.length());
-//        System.out.println("value: " + dotValue);
+//    System.out.println("value: " + dotValue);
     // adjust for small numerical error (upto 1%) - acos function returns NaN for input values > 1.0f
     if (dotValue > 1.0f && dotValue < 1.01f) {
       dotValue = 1.0f;

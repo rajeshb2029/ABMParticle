@@ -256,17 +256,6 @@ public class Simulation {
     }
   }
 
-//  final void drawSimInfo() {
-//    Globals.dbgDraw.drawString(5, 1*Globals.stringSepY, "Framerate: "
-//            + String.format("%.2f", Globals.frameRate),
-//            DebugDrawJ2D.getColor3f(Color.RED));    
-//    Globals.dbgDraw.drawString(5, 2*Globals.stringSepY, "Time: "
-//            + String.format("%.2f", Globals.currentTime),
-//            DebugDrawJ2D.getColor3f(Color.RED));    
-//    Globals.dbgDraw.drawString(5, 3*Globals.stringSepY, "Total cells: " + 
-//            cellArray.size(), DebugDrawJ2D.getColor3f(Color.RED));
-//  }
-
   final void drawSimInfo() {
     Globals.dbgDraw.getGraphics().setColor(Color.RED);
     Globals.dbgDraw.getGraphics().drawString("Framerate: " + String.format("%.2f",
@@ -370,14 +359,6 @@ public class Simulation {
     }
 
     drawSimInfo();
-
-//    drawingFinished = true;
-//    canvas.snapshot(null, image);    
-//    if (Parameters.saveImages && (Parameters.currentTime - lastSnapShotTime)
-//            >= Parameters.snapShotInterval) {
-//      writeSnapshot();
-//      lastSnapShotTime = Parameters.currentTime;
-//    }
   }
 
 }

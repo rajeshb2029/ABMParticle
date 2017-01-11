@@ -26,7 +26,7 @@ public class SimUtils {
       //if file doesn't exists create it
       if (!file.exists()) {
         file.createNewFile();
-//        LOGGER.debug(file.getName());
+        LOGGER.debug(file.getName());
       }
 
       //true = append file
@@ -45,6 +45,7 @@ public class SimUtils {
 
     } catch (IOException ex) {
       ex.printStackTrace(System.err);
+      LOGGER.error("IO Exception for " + filename, ex);
     }
   } // end method writeCellInformation()
 

@@ -65,11 +65,11 @@ public class MyRectangle {
 
     double xTranslate = translatedParentRectangle.pos.x - this.pos.x;
     double yTranslate = translatedParentRectangle.pos.y - this.pos.y;
-//        System.out.println("parentPos:" + this.pos +
-//                " translatedParentPos: " + translatedParentRectangle.pos +
-//                " xTranslate: " + xTranslate + " yTranslate: " + yTranslate);
-//        Vec2[] vecs = translatedParentRectangle.getCorners();
-//        System.out.println(vecs[0] + " " + vecs[1] + " " + vecs[2] + " " + vecs[3]);
+//    System.out.println("parentPos:" + this.pos +
+//            " translatedParentPos: " + translatedParentRectangle.pos +
+//            " xTranslate: " + xTranslate + " yTranslate: " + yTranslate);
+//    Vec2[] vecs = translatedParentRectangle.getCorners();
+//    System.out.println(vecs[0] + " " + vecs[1] + " " + vecs[2] + " " + vecs[3]);
 
     MyRectangle translatedChildRectangle = new MyRectangle(childRectangle.pos.x, childRectangle.pos.y,
             childRectangle.getWidth(), childRectangle.getHeight(), childRectangle.orientation);
@@ -180,20 +180,20 @@ public class MyRectangle {
     return normals;
   }
 
-  //    public boolean contains(Vec2 point) {
-//        MyRectangle translatedParentRectangle = new MyRectangle(this.pos.x, this.pos.y, this.getWidth(), this.getHeight(), this.orientation);
-//        Vec2 translateAmount = translatedParentRectangle.translateBLCornerToOrigin();
+//  public boolean contains(Vec2 point) {
+//    MyRectangle translatedParentRectangle = new MyRectangle(this.pos.x, this.pos.y, this.getWidth(), this.getHeight(), this.orientation);
+//    Vec2 translateAmount = translatedParentRectangle.translateBLCornerToOrigin();
 //
 ////        System.out.println(translatedParentRectangle.getCorners()[2]);
 //
 ////        float xTranslate = translatedParentRectangle.pos.x - this.pos.x;
 ////        float yTranslate = translatedParentRectangle.pos.y - this.pos.y;
 //
-//        point = MyVec2.rotateAroundOrigin(this.getCorners()[2], point, -orientation);
-//        point.addLocal(translateAmount);
+//    point = MyVec2.rotateAroundOrigin(this.getCorners()[2], point, -orientation);
+//    point.addLocal(translateAmount);
 ////        System.out.println("point before and after rotate and translate: " + point);
-//        return (point.x > 0 && point.y > 0 && point.x < width/2 && point.y < height/2);
-//    }
+//    return (point.x > 0 && point.y > 0 && point.x < width/2 && point.y < height/2);
+//}
   public boolean contains(Vec2 point) {
 
     Vec2 pointToCenterVector = point.sub(pos);
